@@ -14,22 +14,21 @@ Helper.setupsetupHNotification(getApplicationContext(), this.getClass());
  Example of OnClickListener
  ```
  OnClickListener onDeleteConfirm = new DialogInterface.OnClickListener() {
-public void onClick(DialogInterface dialog, int whichButton) {
-try {
-Session.currentUserRoomActivityFacade
-.deleteEventRoom(roomIndex);
-startActivityForResult(new Intent(ViewRoom.this,
-Rooms.class), 0);
-} catch (Exception e) {
-Helper.simpleAlert(ViewRoom.this, "error",
-e.getMessage());
-}
-}
-};
+ 	public void onClick(DialogInterface dialog, int whichButton) {
+ 		try {
+ 			Session.currentUserRoomActivityFacade.deleteEventRoom(roomIndex);
+ 			startActivityForResult(new Intent(ViewRoom.this,
+ 			Rooms.class), 0);
+ 		} catch (Exception e) {
+ 			Helper.simpleAlert(ViewRoom.this, "error",
+ 			e.getMessage());
+ 		}
+ 	}
+ };
 
-Helper.confirmationAlert(this, "Confirm Deletion",
-"Are you sure you want to delete this room?",
-onDeleteConfirm, null); //null means on decline don't do anything.
+ Helper.confirmationAlert(this, "Confirm Deletion",
+ 	"Are you sure you want to delete this room?",
+    onDeleteConfirm, null); //null means on decline don't do anything.
 ```
 
 This code will delete the object and move to another activity `Rooms.class`, but since the deletion may raise an exception, there is a try-catch clause, and in the catch; a simple alert will be displayed to the user with the exception message.
