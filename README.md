@@ -7,11 +7,11 @@ In the launcher activity `onCreate()` method
 Helper.setupsetupHNotification(getApplicationContext(), this.getClass());
 ```
 ## HNotification
- *`displayToastNotification(message)` to display a toast notification with the provided message.
- *`displayNotification(title, message)` to display a normal notification, if the user clicks it, the application will launch from the launcher activity.
- *`simpleAlert(this, title, message)` to display a simple alert with an OK button.
- *`confirmationAlert(this, title, message, actionOnConfirm, actionOnDecline)` to display a confirmation message. `actionOnConfirm` will be executed if the user clicks OK. `actionOnDecline` will be executed if the user clicks Cancel.<br>
- Example of OnClickListener
+ * `displayToastNotification(message)` to display a toast notification with the provided message.
+ * `displayNotification(title, message)` to display a normal notification. If the user clicks it, the application will launch from the launcher activity.
+ * `simpleAlert(this, title, message)` to display a simple alert with an OK button.
+ * `confirmationAlert(this, title, message, actionOnConfirm, actionOnDecline)` to display a confirmation message.<br> `actionOnConfirm` will be executed if the user clicks OK. `actionOnDecline` will be executed if the user clicks Cancel.<br>
+ *Example of OnClickListener*
  ```
  OnClickListener onDeleteConfirm = new DialogInterface.OnClickListener() {
  	public void onClick(DialogInterface dialog, int whichButton) {
