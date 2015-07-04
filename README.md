@@ -4,13 +4,13 @@ Android, with many design patterns applied and used, provides a great flexiblity
 ##Setup
 In the launcher activity `onCreate()` method
 ```
-Helper.setupsetupHNotification(getApplicationContext(), this.getClass());
+HNotification.setupsetupHNotification(getApplicationContext(), this.getClass());
 ```
 ## HNotification
- * `displayToastNotification(message)` to display a toast notification with the provided message.
- * `displayNotification(title, message)` to display a normal notification. If the user clicks it, the application will launch from the launcher activity.
- * `simpleAlert(this, title, message)` to display a simple alert with an OK button.
- * `confirmationAlert(this, title, message, actionOnConfirm, actionOnDecline)` to display a confirmation message.<br> `actionOnConfirm` will be executed if the user clicks OK. `actionOnDecline` will be executed if the user clicks Cancel.<br>
+ * `HNotification.displayToastNotification(message)` to display a toast notification with the provided message.
+ * `HNotification.displayNotification(title, message)` to display a normal notification. If the user clicks it, the application will launch from the launcher activity.
+ * `HNotification.simpleAlert(this, title, message)` to display a simple alert with an OK button.
+ * `HNotification.confirmationAlert(this, title, message, actionOnConfirm, actionOnDecline)` to display a confirmation message.<br> `actionOnConfirm` will be executed if the user clicks OK. `actionOnDecline` will be executed if the user clicks Cancel.<br>
  *Example of OnClickListener*
  ```
  OnClickListener onDeleteConfirm = new DialogInterface.OnClickListener() {
@@ -26,7 +26,7 @@ Helper.setupsetupHNotification(getApplicationContext(), this.getClass());
  	}
  };
 
- Helper.confirmationAlert(this, "Confirm Deletion",
+ HNotification.confirmationAlert(this, "Confirm Deletion",
  	"Are you sure you want to delete this room?",
     onDeleteConfirm, null); //null means on decline don't do anything.
 ```
