@@ -1,5 +1,5 @@
 # halv
-Android, with many design patterns applied and used, provides a great flexiblity for developer, you can litraly control *almost* every thing in your application. But this flexbility comes in the way when you want kickstart developing. Halv **(L is not silent)**  provides one place for most common android features and building blocks, so you can start developing using default values and then changing or adding these defaults on a later stage of the developing process. 
+Android, with many design patterns applied and used, provides a great flexiblity for developer, you can litraly control *almost* every thing in your application. But this flexbility comes in the way when you want kickstart developing.<br> Halv **(L is not silent)**  provides one place for the most common features and building blocks, so you can start developing using default values and then change or add these defaults on a later stage of the developing process. 
 
 ##Setup
 In the launcher activity `onCreate()` method
