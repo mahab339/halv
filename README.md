@@ -1,14 +1,13 @@
 # halv
 Android, with many design patterns applied and used, provides a great flexiblity for developer, you can litraly control *almost* every thing in your application. But this flexbility comes in the way when you want kickstart developing.<br> Halv **(L is not silent)**  provides one place for the most common features and building blocks, so you can start developing using default values and then change or add these defaults on a later stage of the developing process. 
+<br>
 
 ## HNotification
-<br>
 ### Setup
 In the launcher activity `onCreate()` method
 ```
 HNotification.setupsetupHNotification(getApplicationContext(), this.getClass());
 ```
-<br>
 ### Methods usage in HNotification
  * `HNotification.displayToastNotification(message)` to display a toast notification with the provided message.
  * `HNotification.displayNotification(title, message)` to display a normal notification. If the user clicks it, the application will launch from the launcher activity.
