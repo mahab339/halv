@@ -1,4 +1,4 @@
-package com.halv.HNotification;
+package com.halv.notification;
 
 /**
  * Created by mohabh on 7/1/15.
@@ -65,7 +65,7 @@ public class HNotification {
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(android.R.string.yes,
-                        new DialogInterface.OnClickListener() {
+                        new OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int which) {
                                 // Here for further actions on click
