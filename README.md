@@ -7,9 +7,11 @@ A wrapper around most common Android features. Aims to make using these features
 Utility for managing and showing date pickers<br>
 Example:
 ```
+
+//the Activity CreateEvent must extends HPickerUpdatable
 public class CreateEvent extends HPickerUpdatable {
 
-  //start and end dates of the event
+  //holders for start and end dates of the event
   private HDatePicker startDate = new HDatePicker(this);
   private HDatePicker endDate = new HDatePicker(this);
 
@@ -22,10 +24,11 @@ public class CreateEvent extends HPickerUpdatable {
   @Override
    public void updateOnPickerSet(HPicker updatedPicker) {
      String date = updatedPicker.getFormattedPickedDate("yyyy-MM-dd");
+     //checking which date is updated, and update its layout element (EditTex in this case)
        if(updatedPicker == startDate)
-          ((EditText) findViewById(R.id.startDate)).setText(d);
+          ((EditText) findViewById(R.id.startDate)).setText(date);
        else if(updatedPicker == endDate)
-          ((EditText) findViewById(R.id.endDate)).setText(d);
+          ((EditText) findViewById(R.id.endDate)).setText(date);
    }
 
    //sending the picked date to the controller
@@ -49,6 +52,10 @@ exampleSpinner = new HSpinner(this, spinner, spinnerData);
 
 * Spinner with a listener<br>
 Another constructor that accepts [AdapterView.OnItemSelectedListener](http://developer.android.com/reference/android/widget/AdapterView.OnItemSelectedListener.html) listener as a forth argument. This listener will be a callback for `OnItemSelected`.
+<br><br>
+* Accessing Spinner selected position/item<br>
+`int selectedPos = exampleSpinner.getSelectedPosition();`<br>
+`int selectedItem = exampleSpinner.getSelectedItem();`
 
 
 
