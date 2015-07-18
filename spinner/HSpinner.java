@@ -1,12 +1,10 @@
-package com.halv.picker;
+package com.halv.spinner;
 
 import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
-import com.ahalha.androidapp.R;
 
 import java.util.ArrayList;
 

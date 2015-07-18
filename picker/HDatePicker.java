@@ -11,13 +11,14 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.DatePicker;
 
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
  * Created by mohabh on 7/8/15.
  */
-public class HDatePicker {
+public class HDatePicker implements HPicker{
 
     /**
      * date holder for what the user pick.
@@ -25,7 +26,7 @@ public class HDatePicker {
      */
     private Calendar pickedDate = new GregorianCalendar();
 
-    public static HPickerUpdatable senderActivity;
+    public HPickerUpdatable senderActivity;
 
     public HDatePicker(HPickerUpdatable senderActivity){
         this.senderActivity = senderActivity;
@@ -43,6 +44,16 @@ public class HDatePicker {
 
     private void setPickedDate(Calendar pickedDate) {
         this.pickedDate = pickedDate;
+    }
+
+    /**
+     * Use SimpleDateFormat to format picked date
+     * @param format any date format supported by SimpleDateFormat.
+     * @return a formatted string that represents date
+     */
+    public String getFormattedPickedDate(String format) {
+        SimpleDateFormat f = new SimpleDateFormat(format);
+        return f.format(pickedDate.getTime());
     }
 
 
@@ -90,7 +101,7 @@ public class HDatePicker {
         public void onDateSet(DatePicker view, int year, int month, int day) {
             Calendar c = new GregorianCalendar(year,month,day);
             pickedDate = c;
-            senderActivity.updateOnPickerSet();
+            senderActivity.updateOnPickerSet(HDatePicker.this);
         }
 
 

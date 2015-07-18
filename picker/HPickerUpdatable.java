@@ -16,5 +16,5 @@ public abstract class HPickerUpdatable extends FragmentActivity{
      *  i.e. senderActivity.updateOnPickerSet();
      * should contain code to update the view.
      */
-    public abstract void updateOnPickerSet();
+    public abstract void updateOnPickerSet(HPicker updatedPicker);
 }
