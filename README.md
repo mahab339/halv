@@ -55,7 +55,7 @@ Another constructor that accepts [AdapterView.OnItemSelectedListener](http://dev
 <br><br>
 * Accessing Spinner selected position/item<br>
 `int selectedPos = exampleSpinner.getSelectedPosition();`<br>
-`int selectedItem = exampleSpinner.getSelectedItem();`
+`String selectedItem = exampleSpinner.getSelectedItem();`
 
 
 
