@@ -17,7 +17,7 @@ public class CreateEvent extends HPickerUpdatable {
 
   //the callback method responsible for showing the date picker fragment to the user
   public void showStartDatePicker(View view) {
-        urgencyHDatePicker.showHDatePickerDialog();
+        startDate.showHDatePickerDialog();
     }
 
   //updating the view when a date gets updated
