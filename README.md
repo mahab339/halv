@@ -1,5 +1,5 @@
 # halv
-A wrapper around most common Android features. Aims to make using these features by applying ["coding by convention"](https://en.wikipedia.org/wiki/Convention_over_configuration) principle, with a little of design patterns.
+A wrapper around most common Android features. Aims to make using these features easier by applying ["coding by convention"](https://en.wikipedia.org/wiki/Convention_over_configuration) principle, with a little of design patterns.
 <br>
 
 ## Package `com.halv.picker`
