@@ -1,5 +1,5 @@
 # halv
-A wrapper around most common Android features. Aims to make using these features by applying ["coding by convention"](https://en.wikipedia.org/wiki/Convention_over_configuration) principle, with a little of design patterns.
+A wrapper around most common Android features. Aims to make using these features easier by applying ["coding by convention"](https://en.wikipedia.org/wiki/Convention_over_configuration) principle, with a little of design patterns.
 <br>
 
 ## Package `com.halv.picker`
@@ -17,7 +17,7 @@ public class CreateEvent extends HPickerUpdatable {
 
   //the callback method responsible for showing the date picker fragment to the user
   public void showStartDatePicker(View view) {
-        urgencyHDatePicker.showHDatePickerDialog();
+        startDate.showHDatePickerDialog();
     }
 
   //updating the view when a date gets updated
@@ -55,7 +55,7 @@ Another constructor that accepts [AdapterView.OnItemSelectedListener](http://dev
 <br><br>
 * Accessing Spinner selected position/item<br>
 `int selectedPos = exampleSpinner.getSelectedPosition();`<br>
-`int selectedItem = exampleSpinner.getSelectedItem();`
+`String selectedItem = exampleSpinner.getSelectedItem();`
 
 
 
