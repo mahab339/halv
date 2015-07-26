@@ -21,6 +21,9 @@ public class HSpinner implements AdapterView.OnItemSelectedListener {
     private String selectedItem;
     private int selectedPosition = 0;
 
+    private static int spinnerItemView = android.R.layout.simple_spinner_item;
+    private static int spinnerView = android.R.layout.simple_spinner_dropdown_item;
+
     /**
      * Constructor
      *
@@ -32,8 +35,8 @@ public class HSpinner implements AdapterView.OnItemSelectedListener {
                     ArrayList<String> spinnerData) {
         this.spinnerData = spinnerData;
         // Creating adapter for spinner
-        ArrayAdapter<String> adapterData = new ArrayAdapter<>(senderActivity, android.R.layout.simple_spinner_item, spinnerData);
-        adapterData.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapterData = new ArrayAdapter<>(senderActivity, spinnerItemView, spinnerData);
+        adapterData.setDropDownViewResource(spinnerView);
         // attaching data adapter to spinner
         spinner.setAdapter(adapterData);
         spinner.setSelection(0);
@@ -54,8 +57,8 @@ public class HSpinner implements AdapterView.OnItemSelectedListener {
                     ArrayList<String> spinnerData, AdapterView.OnItemSelectedListener l) {
         this.spinnerData = spinnerData;
         // Creating adapter for spinner
-        ArrayAdapter<String> adapterData = new ArrayAdapter<>(senderActivity, android.R.layout.simple_spinner_item, spinnerData);
-        adapterData.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapterData = new ArrayAdapter<>(senderActivity, HSpinner.spinnerItemView, spinnerData);
+        adapterData.setDropDownViewResource(HSpinner.spinnerView);
         // attaching data adapter to spinner
         spinner.setAdapter(adapterData);
         spinner.setSelection(0);
@@ -81,6 +84,22 @@ public class HSpinner implements AdapterView.OnItemSelectedListener {
         return spinnerData;
     }
 
+
+    /**
+     * set a custom layout to the spinner items
+     * @param spinnerItemView i.e. R.layout.my_custom_spinner_item
+     */
+    public static void setSpinnerItemView(int spinnerItemView) {
+        HSpinner.spinnerItemView = spinnerItemView;
+    }
+
+    /**
+     * set a custom layout to the spinner view
+     * @param spinnerView i.e. R.layout.my_custom_spinner
+     */
+    public static void setSpinnerView(int spinnerView) {
+        HSpinner.spinnerView = spinnerView;
+    }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
