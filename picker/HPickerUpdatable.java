@@ -1,7 +1,6 @@
 package com.halv.picker;
 
-import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Extends FragmentActivity because we need .getSupportFragmentManager() method
@@ -9,7 +8,7 @@ import android.support.v4.app.FragmentActivity;
  *
  * Created by mohabh on 7/9/15.
  */
-public abstract class HPickerUpdatable extends FragmentActivity{
+public abstract class HPickerUpdatable extends AppCompatActivity {
 
     /**
      * Call back method called when user set the picker to a certain date or time
@@ -17,4 +16,5 @@ public abstract class HPickerUpdatable extends FragmentActivity{
      * should contain code to update the view.
      */
     public abstract void updateOnPickerSet(HPicker updatedPicker);
+
 }
